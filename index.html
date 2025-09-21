@@ -1,1 +1,129 @@
-<h1>Hello WOrld!</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Over The Top Home Renovations</title>
+    <meta name="description" content="Serving Kingston and the Area — Over The Top Home Renovations" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <nav class="nav container">
+        <a class="brand" href="#home">OVER THE TOP</a>
+        <input type="checkbox" id="menu-toggle" />
+        <label class="hamburger" for="menu-toggle" aria-label="Toggle menu">&#9776;</label>
+        <ul class="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="hero container">
+        <h1><span>Building trust</span> with quality work</h1>
+        <p>Serving Kingston and the Area</p>
+        <a class="btn primary" href="#contact">Get a Quote</a>
+      </section>
+    </header>
+
+    <main>
+      <section class="about container" id="about">
+        <div class="section-head">
+          <h2>About Us</h2>
+          <p>We work with architects and designers to produce beautiful, functional structures.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>What We Do</h3>
+            <p>Our projects include both new construction and repairs/restorations. Occupied and fully operational job sites are never a problem. We can plan, manage, and build multi-phase jobs.</p>
+          </article>
+
+          <article class="card">
+            <h3>Working Together</h3>
+            <p>We offer an end-to-end client experience that includes seamless communication, budgeting, staffing, on-site organization, and solid, quality handiwork every time.</p>
+          </article>
+
+          <article class="card">
+            <h3>Why Choose Us</h3>
+            <p>Call us today and bring our project management skills and extensive construction experience to your next project.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="container">
+          <div class="section-head">
+            <h2>Our Work</h2>
+            <p>A snapshot of recent projects.</p>
+          </div>
+          <div class="gallery">
+            <!-- Replace the image src values with your own photos in /images -->
+            <figure><img src="https://images.unsplash.com/photo-1505691723518-36a5ac3b2a59?q=80&w=1200&auto=format&fit=crop" alt="Renovation project 1"><figcaption>Exterior update</figcaption></figure>
+            <figure><img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c8e5?q=80&w=1200&auto=format&fit=crop" alt="Renovation project 2"><figcaption>Kitchen remodel</figcaption></figure>
+            <figure><img src="https://images.unsplash.com/photo-1523419409543-28a1b5f2b9b7?q=80&w=1200&auto=format&fit=crop" alt="Renovation project 3"><figcaption>Bathroom refresh</figcaption></figure>
+            <figure><img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200&auto=format&fit=crop" alt="Renovation project 4"><figcaption>Flooring</figcaption></figure>
+            <figure><img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop" alt="Renovation project 5"><figcaption>Deck build</figcaption></figure>
+            <figure><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop" alt="Renovation project 6"><figcaption>Basement finish</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact container" id="contact">
+        <div class="section-head">
+          <h2>Contact Us</h2>
+          <p>Send us a message, or call us for a quote. Tell us more about your project and we’ll connect you with the services to fit your needs.</p>
+        </div>
+
+        <!-- Option A: simple email form using Formspree (update the action URL with your own) -->
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+          <div class="grid">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your full name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="(613) 555-1234">
+            </label>
+            <label class="full">
+              <span>Address</span>
+              <input type="text" name="address" placeholder="Street, City, Postal Code">
+            </label>
+            <label class="full">
+              <span>Message</span>
+              <textarea name="message" rows="5" placeholder="Tell us about your project"></textarea>
+            </label>
+          </div>
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+
+        <div class="business-card">
+          <h3>Over The Top Home Renovations</h3>
+          <p>Kingston, Ontario, Canada</p>
+          <p><a href="tel:+16137665775">613-766-5775</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>&copy; <span id="year"></span> Over The Top Home Renovations. All rights reserved.</p>
+        <ul class="social">
+          <li><a href="https://overthetoprenos.ca/" target="_blank" rel="noopener">Original Site</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
