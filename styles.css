@@ -110,6 +110,14 @@ body{
 }
 
 /* OUR WORK */
+
+.thumb-strip img{ cursor:pointer; opacity:.95; transition:transform .15s ease, opacity .15s ease, box-shadow .15s ease }
+.thumb-strip img:hover{ opacity:1; transform:translateY(-1px) }
+.thumb-strip img.active{
+  border-color:#e6e6e6;
+  box-shadow:0 0 0 2px #e6e6e6;
+}
+
 .work{background:#1b1c1f; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
 .work-hero{
   margin:0 auto 10px;
