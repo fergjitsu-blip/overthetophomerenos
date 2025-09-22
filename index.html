@@ -75,28 +75,28 @@
   </section>
 
   <!-- OUR WORK -->
-  <section class="section work">
-    <div class="container">
-      <h2 class="section-title">OUR WORK</h2>
+<section class="section work">
+  <div class="container">
+    <h2 class="section-title">OUR WORK</h2>
 
-      <figure class="work-hero">
-        <!-- Replace with your own main project image -->
-        <img src="images/slider/1.jpg" alt="Project">
-      </figure>
+    <figure class="work-hero">
+      <img id="workHero" src="images/slider/1.jpg" alt="Project 1">
+    </figure>
 
-      <div class="thumb-strip">
-        <!-- Replace these with your gallery thumbs (use the same height for best look) -->
-        <img src="images/slider/1.jpg" alt="">
-        <img src="images/slider/2.jpg" alt="">
-        <img src="images/slider/3.jpg" alt="">
-        <img src="images/slider/4.jpg" alt="">
-        <img src="images/slider/5.jpg" alt="">
-        <img src="images/slider/6.jpg" alt="">
-        <img src="images/slider/7.jpg" alt="">
-        <img src="images/slider/8.jpg" alt="">        
-      </div>
+    <div class="thumb-strip" id="thumbStrip">
+      <!-- If you ever use separate thumbnail files, set data-full to the big image -->
+      <img src="images/slider/1.jpg" data-full="images/slider/1.jpg" alt="Project 1" loading="lazy">
+      <img src="images/slider/2.jpg" data-full="images/slider/2.jpg" alt="Project 2" loading="lazy">
+      <img src="images/slider/3.jpg" data-full="images/slider/3.jpg" alt="Project 3" loading="lazy">
+      <img src="images/slider/4.jpg" data-full="images/slider/4.jpg" alt="Project 4" loading="lazy">
+      <img src="images/slider/5.jpg" data-full="images/slider/5.jpg" alt="Project 5" loading="lazy">
+      <img src="images/slider/6.jpg" data-full="images/slider/6.jpg" alt="Project 6" loading="lazy">
+      <img src="images/slider/7.jpg" data-full="images/slider/7.jpg" alt="Project 7" loading="lazy">
+      <img src="images/slider/8.jpg" data-full="images/slider/8.jpg" alt="Project 8" loading="lazy">
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- CONTACT -->
   <section class="section contact">
@@ -172,6 +172,41 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script>
+  (function () {
+    const hero = document.getElementById('workHero');
+    const strip = document.getElementById('thumbStrip');
+
+    // Click to swap
+    strip.addEventListener('click', (e) => {
+      const img = e.target.closest('img');
+      if (!img) return;
+      const full = img.dataset.full || img.src;
+      hero.src = full;
+      hero.alt = img.alt || 'Project image';
+
+      // active state
+      strip.querySelectorAll('img.active').forEach(el => el.classList.remove('active'));
+      img.classList.add('active');
+    });
+
+    // Keyboard support
+    strip.querySelectorAll('img').forEach((img, i) => {
+      img.tabIndex = 0;
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          img.click();
+        }
+      });
+    });
+
+    // Set first thumbnail active on load
+    const first = strip.querySelector('img');
+    if (first) first.classList.add('active');
+  })();
+</script>
+
 </body>
 </html>
 
