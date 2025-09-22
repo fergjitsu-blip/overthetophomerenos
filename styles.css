@@ -125,13 +125,14 @@ body{
   border:1px solid #2a2a2d;
   background:#000;
 }
-.work-hero img{width: 120px;
-    height: 200px;
-    object-fit: cover;
-    border: 1px solid #2a2a2d;
-    border-radius: 4px;
-    background: #000;
-    flex: 0 0 auto;}
+/* Force 400px-tall hero image, full-width, cropped */
+.work-hero img{
+  width: 100%;
+  height: 400px;
+  display: block;
+  object-fit: cover;        /* crop to fill the box */
+  object-position: center;  /* keep center visible */
+}
 
 .thumb-strip{
   display:flex; gap:8px; align-items:center;
